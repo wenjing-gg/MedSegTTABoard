@@ -1,20 +1,26 @@
 # MedSegTTABoard: Benchmarking Test-time Adaptation Methods for Domain Shift in Medical Image Segmentation
 
-MedSegTTABoard 旨在统一并复现医学图像分割领域的测试时自适应（TTA）方法评测，提供标准化的数据、脚本与可复现实验，以便在多模态、多器官、多任务下进行公平对比。
+[![GitHub](https://img.shields.io/badge/GitHub-MedSegTTABoard-181717?logo=github)](https://github.com/wenjing-gg/MedSegTTABoard)
+[![arXiv](https://img.shields.io/badge/arXiv-Coming%20soon-lightgrey?logo=arxiv)](#)
+[![Modalities](https://img.shields.io/badge/Modalities-7-blue)](#)
+[![Leaderboard](https://img.shields.io/badge/Leaderboard-Coming%20soon-orange)](#)
+[![License](https://img.shields.io/badge/License-TBD-lightgrey)](#)
+
+MedSegTTABoard is an open benchmark for evaluating test-time adaptation (TTA) methods in medical image segmentation. It standardizes data, metrics, and protocols across modalities, organs, and tasks, enabling fair and reproducible comparisons under strict constraints (fixed backbone, no source-domain access, and no implicit leakage).
 
 ![Framework](fig/framework.png)
 
-## 核心贡献（Main Contributions）
+## Main Contributions
 
-- **Multi-modal and multi-center open-source dataset:** We construct a dataset that covers tumor, organ, and lesion segmentation across seven imaging modalities, namely MRI, CT, US, PATH, DER, OCT, and CXR. The dataset employs standardized preprocessing and partitioning, faithfully reflecting distribution shifts across institutions, scanners, and populations, thereby providing a data foundation for the unified TTBA benchmark.
-- **Strong baselines and SOTA reproduction:** Under a unified TTBA setting that fixes the backbone and forbids source-domain access as well as any implicit leakage, we systematically reproduce and validate twenty state-of-the-art TTA methods across four paradigms, delivering readily usable strong baselines and reproducible scripts. We also establish a public leaderboard that enables comparisons across modalities, organs, and tasks using region-consistency and structure-sensitive metrics such as Dice and HD95.
-- **Paradigm taxonomy and applicability lineage:** We categorize TTA methods into four paradigms according to their locus of operation and, based on evaluations across modalities, organs, and tasks, construct lineage maps that highlight effective and ineffective regimes. This delineates applicability boundaries and provides practical guidance for future method selection.
+- Multi-modal and multi-center open-source dataset: We construct a dataset that covers tumor, organ, and lesion segmentation across seven imaging modalities, namely MRI, CT, US, PATH, DER, OCT, and CXR. The dataset employs standardized preprocessing and partitioning, faithfully reflecting distribution shifts across institutions, scanners, and populations, thereby providing a data foundation for the unified TTBA benchmark.
+- Strong baselines and SOTA reproduction: Under a unified TTBA setting that fixes the backbone and forbids source-domain access as well as any implicit leakage, we systematically reproduce and validate twenty state-of-the-art TTA methods across four paradigms, delivering readily usable strong baselines and reproducible scripts. We also establish a public leaderboard that enables comparisons across modalities, organs, and tasks using region-consistency and structure-sensitive metrics such as Dice and HD95.
+- Paradigm taxonomy and applicability lineage: We categorize TTA methods into four paradigms according to their locus of operation and, based on evaluations across modalities, organs, and tasks, construct lineage maps that highlight effective and ineffective regimes. This delineates applicability boundaries and provides practical guidance for future method selection.
 
 ![Dataset Coverage](fig/dataset.png)
 
-## 数据集下载与配对表（Source–Target Dataset Pairs）
+## Source–Target Dataset Pairs and Downloads
 
-对齐源域与目标域的类别定义后，“Binary”为二分类前景-背景任务；“4-Class”为四类（含背景）。`Reprocess` 列使用 ✓ 表示标准化重处理，✗ 表示使用原始数据。
+After aligning class definitions between source and target domains, “Binary” tasks have a foreground–background split, while “4-Class” tasks include the background plus three anatomical classes. The Reprocess column uses ✓ to indicate standardized reprocessing and ✗ for original data.
 
 | Modal | Dataset | Domain | Category | Quantity | Year | Reprocess | Source |
 | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -35,7 +41,29 @@ MedSegTTABoard 旨在统一并复现医学图像分割领域的测试时自适�
 
 ![Paradigm Taxonomy](fig/paradigm.png)
 
----
+## Getting Started
 
-若你在 GitHub 查看本页未显示 PDF，请使用上面的 PNG 版本预览；原始 PDF 也已随仓库发布于 `fig/` 目录。
+- Code and reproducible baselines are being prepared for public release. The repository already hosts standardized figures and dataset references; training and evaluation scripts will follow under a unified TTBA protocol.
+- Planned components: baseline configs, evaluation toolkit (Dice/HD95 + region consistency), submission format, and a public leaderboard for cross-modality comparisons.
 
+## Citation
+
+If you find this project useful, please cite:
+
+```
+@article{MedSegTTABoard,
+  title   = {MedSegTTABoard: Benchmarking Test-time Adaptation Methods for Domain Shift in Medical Image Segmentation},
+  journal = {arXiv preprint arXiv:xxxx.xxxxx},
+  year    = {2025}
+}
+```
+
+## Links
+
+- Repository: https://github.com/wenjing-gg/MedSegTTABoard
+- Paper (arXiv): coming soon
+- Leaderboard: coming soon
+
+## License
+
+License to be announced. Please open an issue if you have specific licensing needs for early experimentation.
