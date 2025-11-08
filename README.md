@@ -64,6 +64,10 @@ If you find this project useful, please cite:
 - Paper (arXiv): coming soon
 - Leaderboard: coming soon
 
+## Contributing
+
+Contributions are welcome. Please read `CONTRIBUTING.md` for guidelines (branching, Conventional Commits, CI checks). PRs should pass markdownlint and link checks.
+
 ## License
 
-License to be announced. Please open an issue if you have specific licensing needs for early experimentation.
+This project is released under the MIT License. See `LICENSE` for details.
